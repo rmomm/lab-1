@@ -33,5 +33,3 @@ int eulerFunc(int n) {
     }
     return result;
 }
-
-

@@ -1,3 +1,4 @@
+#include "lab1.h"
 #include <iostream>
 #include <vector>
 #include <cmath> 

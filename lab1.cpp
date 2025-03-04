@@ -24,6 +24,9 @@ vector<pair<int, int>> primeFactorization(int n) {
 
 
 int eulerFunc(int n) {
+    if (n <= 0) {
+        return 0;  
+    }
     auto factors = primeFactorization(n);
     int result = 1;
     for (auto factor : factors) {

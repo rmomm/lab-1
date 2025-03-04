@@ -29,7 +29,6 @@ jobs:
 
       - name: Build project
         run: |
-          set -e
           g++ -std=c++17 -o my_program Test.cpp lab1.cpp -lgtest -lgtest_main -pthread
 
       - name: Run tests

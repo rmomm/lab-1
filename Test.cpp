@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "lab1.cpp"
+#include "lab1.h"
 
 using namespace std;
 

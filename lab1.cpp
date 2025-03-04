@@ -34,17 +34,4 @@ int eulerFunc(int n) {
     return result;
 }
 
-int main() {
-    int n;
-    cout << "Enter n: ";
-    cin >> n;
-
-    if (n < 2) {
-        cout << "The number must be at least 2." << endl;
-        return 1;
-    }
-
-    cout << "Euler function (" << n << ") = " << eulerFunc(n) << endl;
-    return 0;
-}
 

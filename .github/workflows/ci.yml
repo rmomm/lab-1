@@ -20,19 +20,24 @@ jobs:
       - name: Set up compiler and Google Test
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++ cmake make cppcheck clang-tidy
+          sudo apt-get install -y g++ cmake make clang-tidy
           git clone https://github.com/google/googletest.git
           cd googletest
           cmake .
           make
           sudo make install
 
+      - name: Lint code
+        run: |
+          clang-tidy lab1.cpp --checks=* -- -std=c++17 -header-filter='.*'
+          clang-tidy Test.cpp --checks=-google-* -- -std=c++17 -header-filter='.*'
+
       - name: Build project
         run: |
-          g++ -std=c++17 -c lab1.cpp
-          g++ -std=c++17 -o my_program Test.cpp lab1.o -lgtest -lgtest_main -pthread
+          set -e
+          g++ -std=c++17 -o my_program Test.cpp lab1.cpp -lgtest -lgtest_main -pthread
 
       - name: Run tests
         run: |
+          chmod +x my_program
           ./my_program
- 

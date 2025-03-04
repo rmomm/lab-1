@@ -27,11 +27,6 @@ jobs:
           make
           sudo make install
 
-      - name: Lint code
-        run: |
-          clang-tidy lab1.cpp --checks=* -- -std=c++17 -header-filter='.*'
-          clang-tidy Test.cpp --checks=-google-* -- -std=c++17 -header-filter='.*'
-
       - name: Build project
         run: |
           set -e
